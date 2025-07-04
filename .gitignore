@@ -1,0 +1,17 @@
+# Ignore models and data
+models/
+data/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ML artifacts
+*.pkl
+*.csv
+
+# Logs
+*.log
+
+# VS Code settings (optional)
+.vscode/
