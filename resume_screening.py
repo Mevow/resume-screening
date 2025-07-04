@@ -16,7 +16,7 @@ def main():
                 resume_text, pages, word_count = extract_features_from_pdf(pdf_path)
 
                 if resume_text.strip() == "":
-                    print(f"⚠️ Skipped empty: {file}")
+                    print(f" Skipped empty: {file}")
                     continue
 
                 # Count keywords for stats
@@ -40,7 +40,7 @@ def main():
                 })
 
     if not results:
-        print("⚠️ No resumes processed or all resumes were empty.")
+        print("⚠ No resumes processed or all resumes were empty.")
         return
 
     # Save results
@@ -52,8 +52,8 @@ def main():
     filtered_df = df[df['confidence'] > 0.9]
     filtered_df.to_csv("high_confidence_predictions.csv", index=False)
 
-    # Show top results
-    print("\n🎯 High-confidence predictions (> 0.9):\n")
+    # Print top results
+    print("\n High-confidence predictions (> 0.9):\n")
     print(filtered_df)
 
 if __name__ == "__main__":
