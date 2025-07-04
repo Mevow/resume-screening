@@ -1,4 +1,4 @@
-import fitz  # PyMuPDF
+import fitz 
 
 def extract_features_from_pdf(pdf_path):
     try:
@@ -8,7 +8,7 @@ def extract_features_from_pdf(pdf_path):
             text += page.get_text()
         num_pages = len(doc)
         num_words = len(text.split())
-        doc.close()  # Explicit close to avoid "document closed" errors
+        doc.close() 
         return text.lower(), num_pages, num_words
     except Exception as e:
         print(f"Error reading {pdf_path}: {e}")
